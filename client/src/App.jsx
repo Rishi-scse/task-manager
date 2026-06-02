@@ -4,7 +4,9 @@ import TaskCard from './components/TaskCard';
 import TaskForm from './components/TaskForm';
 import EmptyState from './components/EmptyState';
 
-const API_BASE_URL = 'http://localhost:5000/tasks';
+const API_BASE_URL = import.meta.env.VITE_API_URL 
+  ? `${import.meta.env.VITE_API_URL}/tasks` 
+  : 'http://localhost:5000/tasks';
 
 function App() {
   const [tasks, setTasks] = useState([]);
